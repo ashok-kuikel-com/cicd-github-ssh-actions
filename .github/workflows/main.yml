@@ -2,7 +2,7 @@ name: Deploy Site on push
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   web-deploy:
     name: Deploy
@@ -33,7 +33,4 @@ jobs:
         server: ${{ secrets.LARAVEL_SITE_SERVER}}
         username: ${{ secrets.LARAVEL_SITE_USER}}
         password: ${{ secrets.LARAVEL_SITE_PASS}}
-        port: ${{ secrets.LARAVEL_SITE_PORT}}
-        protocol: ${{ secrets.LARAVEL_SITE_PROTOCOL}}
-        dry-run: ${{ secrets.LARAVEL_SITE_DYR_RUN}}
         
