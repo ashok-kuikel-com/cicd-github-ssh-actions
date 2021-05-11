@@ -1,0 +1,19 @@
+name: Deploy Site Pull
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Push to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ADMIN_SITE_SERVER }}
+          username: ${{ secrets.ADMIN_SITE_USER }}
+          key: ${{ secrets.ADMIN_SITE_KEY }}
+          port: ${{ secrets.ADMIN_SITE_PORT }}
+          script: cd ${{ secrets.ADMIN_PROJECT_PATH }} && git pull
