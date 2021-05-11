@@ -1,8 +1,7 @@
-name: Deploy Site Pull
-on:
-  push:
-    branches:
-      - main
+name: Deploy Pull
+
+on: [push]
+
 jobs:
   deploy:
     if: github.ref == 'refs/heads/master'
