@@ -34,7 +34,7 @@ jobs:
       - name: Deployment
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.LARAVEL_SITE_SERVER }}
+          host: ${{ secrets.ADMIN_SITE_SERVER }}
           key: ${{ secrets.ADMIN_SITE_KEY }}
           username: ${{ secrets.ADMIN_SITE_USER }}
           script: |
