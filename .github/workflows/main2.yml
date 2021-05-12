@@ -41,7 +41,9 @@ jobs:
             
             cd /var/www/html/
             
-            git pull
+            git remote add cicd https://github.com/ashok-kuikel-com/cicd-github-ssh-actions
+            
+            git pull cicd main
             
             git merge
             
