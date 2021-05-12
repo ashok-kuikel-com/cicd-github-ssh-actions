@@ -4,6 +4,9 @@ on:
     branches:
       - main
 jobs:
+  build:
+    runs-on: self-hosted
+
   web-deploy:
     name: Deploy
     runs-on: ubuntu-latest
