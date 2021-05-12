@@ -52,15 +52,6 @@ jobs:
       
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
-      
-    - name: 📂 Sync files
-      uses: wlixcc/SFTP-Deploy-Action@v1.0
-      with:
-          username: '${{ secrets.ADMIN_SITE_USER}}'
-          server: '${{ secrets.ADMIN_SITE_SERVER}}'
-          ssh_private_key: ${{ secrets.ADMIN_SITE_KEY }}
-          remote_path: '/var/www/html/'
-          args: '-o ConnectTimeout=5'
           
           
           
