@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/test'
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v1
@@ -16,3 +16,6 @@ jobs:
           key: ${{ secrets.ADMIN_SITE_KEY }}
           port: ${{ secrets.ADMIN_SITE_PORT }}
           script: cd ${{ secrets.ADMIN_PROJECT_PATH }} && git pull
+          
+          
+          
